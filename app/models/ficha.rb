@@ -24,12 +24,11 @@ class Ficha < ApplicationRecord
 	      		client = ficha.client
 	      		orders = ficha.orders.map { |o| "#{o.product.name} (#{o.product_count})" }.join(";")
 	      		link = "
-	      		<div id='printForm'>
+	      		<div id='printform#{ficha.id}')>
 
 	      		</div>
 	      		<script>
 	      			var f = document.createElement('form');
-	      			f.setAttribute('id', 'printform#{ficha.id}')
 							f.setAttribute('method','post');
 							f.setAttribute('action','#{bindings[:view].main_app.reports_path}');
 
@@ -42,6 +41,11 @@ class Ficha < ApplicationRecord
 							client_rg.setAttribute('type','hidden');
 							client_rg.setAttribute('name','client_rg');
 							client_rg.setAttribute('value','#{client.rg}');
+
+							var client_cpf = document.createElement('input');
+							client_cpf.setAttribute('type','hidden');
+							client_cpf.setAttribute('name','client_cpf');
+							client_cpf.setAttribute('value','#{client.cpf}');
 
 							var client_phone = document.createElement('input');
 							client_phone.setAttribute('type','hidden');
@@ -68,14 +72,14 @@ class Ficha < ApplicationRecord
 							orders.setAttribute('name','orders');
 							orders.setAttribute('value','#{orders}');
 
-
 							var s = document.createElement('input');
 							s.setAttribute('type','submit');
-							s.setAttribute('value','Imprimir');
+							s.setAttribute('value','Submit');
 
 							// TODO: Append many elements at once
 							f.appendChild(client_name);
 							f.appendChild(client_rg);
+							f.appendChild(client_cpf);
 							f.appendChild(client_phone);
 							f.appendChild(client_address);
 							f.appendChild(client_neighborhood);
@@ -83,7 +87,7 @@ class Ficha < ApplicationRecord
 							f.appendChild(orders);
 							f.appendChild(s);
 
-							document.getElementById('printForm').appendChild(f);
+							document.getElementById('printform#{ficha.id}').appendChild(f);
 	      		</script>
 	      		"
 	      		link.html_safe
