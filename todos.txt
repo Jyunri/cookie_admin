@@ -1,0 +1,14 @@
+// NEW
+- Gerar ficha do cliente com as ordens
+- Na tela de fichas, retornar a meta para todas as fichas exibidas
+
+// BACKLOG
+- Limitar campos para mostrar e editar no admin
+- Setar os campos required
+- Fazer a traducao dos campos
+- Tirar a busca bizu e deixar soh o botao de atualizar
+- exportar para xlsx
+
+// RESOLVED
+- Adicionar o campo return_date na ficha
+- Criar a model order
