@@ -2,6 +2,15 @@ class Ficha < ApplicationRecord
 	belongs_to :client
 	has_many :orders
 
+	# Virtual fields for rails admin
+	def city
+		self.client.city
+	end
+
+	def orders_price
+		self.orders.eager_load(:product).pluck(:product_count,:price).sum {|c, p| (c * p).to_f}
+	end
+
 	RailsAdmin.config do |config|
 	  config.model 'Ficha' do
 	    list do
@@ -9,15 +18,23 @@ class Ficha < ApplicationRecord
 	      field :client, :belongs_to_association do
 	      	label 'nome do cliente'
 	      end
-	      field :return_date do label 'data de retorno' end
+	      field :city do
+	      	label 'cidade'
+  	      filterable true
+  	      searchable do
+  	      	[{clients: :city}]
+  	      end
+	      end
 	      field :orders, :has_many_association do
 	      	label 'produtos pedidos'
 	      	def pretty_value
 	      		products = value.map { |v| "<a target='blank' href ='/order/#{v.id}'>#{v.product.name} (#{v.product_count})</a>" }.join("<br>").html_safe
 	      	end
 	      end
-	      field :created_at
-	      field :updated_at
+	      field :orders_price do
+	      	label 'valor total dos pedidos'
+	      end
+	      field :return_date do label 'data de retorno' end
 	      field :print do
 	      	def pretty_value
 	      		ficha = bindings[:object]
@@ -74,7 +91,7 @@ class Ficha < ApplicationRecord
 
 							var s = document.createElement('input');
 							s.setAttribute('type','submit');
-							s.setAttribute('value','Submit');
+							s.setAttribute('value','Imprimir');
 
 							// TODO: Append many elements at once
 							f.appendChild(client_name);
