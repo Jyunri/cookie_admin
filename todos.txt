@@ -1,14 +1,16 @@
 // NEW
+- Colocar botao de imprimir tudo
+- Colocar total de estoque
 
 // BACKLOG
 - Limitar campos para mostrar e editar no admin
-- Setar os campos required
 - Fazer a traducao dos campos
-- Tirar a busca bizu e deixar soh o botao de atualizar
 - exportar para xlsx
 - Gerar ficha do cliente com as ordens (FRONTEND)
 
 // RESOLVED
+- Tirar a busca bizu e deixar soh o botao de atualizar
+- Setar os campos required
 - Adicionar o campo return_date na ficha
 - Criar a model order
 - Gerar ficha do cliente com as ordens (BACKEND)
