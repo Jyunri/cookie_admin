@@ -2,6 +2,8 @@ class Ficha < ApplicationRecord
 	belongs_to :client
 	has_many :orders
 
+	validates :client, uniqueness: true
+
 	# Virtual fields for rails admin
 	def city
 		self.client.city
@@ -48,6 +50,7 @@ class Ficha < ApplicationRecord
 	      			var f = document.createElement('form');
 							f.setAttribute('method','post');
 							f.setAttribute('action','#{bindings[:view].main_app.reports_path}');
+							f.target='_blank';
 
 							var client_name = document.createElement('input');
 							client_name.setAttribute('type','hidden');
