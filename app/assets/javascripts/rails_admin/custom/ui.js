@@ -50,18 +50,32 @@ $.extend(
     {
 	    var form = '';
 	    $.each( args, function( key, value ) {
-	        form += '<input type="hidden" name="'+key+'" value="'+value+'">';
+	    	debugger;
+	    	value = JSON.stringify(value).replace(/\"/g, '')
+        form += '<input type="hidden" name="'+key+'" value="'+value+'">';
 	    });
 	    $('<form action="'+location+'" method="POST">'+form+'</form>').appendTo('body').submit();
     }
 });
 
 function submitForms() {
-	params = JSON.stringify($("form[action='/print']").serialize());
-	$forms = $("form[action='/print']");
-	data = JSON.stringify(params);
+	// params = JSON.stringify($("form[action='/print']").serialize());
+	params = $("form[action='/print']");
+
+	client_names = {}
+	client_rgs = {}
+	data = {}
+	params.each( function(index) {
+		data[index]={};
+		data[index]["client_name"] = $(this)[0][0].value;
+		data[index]["client_rg"] = $(this)[0][1].value;
+	});
+	params.each( function(index) {
+		client_names[index] = $(this)[0][0].value
+		client_rgs[index] = $(this)[0][1].value
+	});
+	// data = JSON.stringify(params);
 	var redirect = '/print';
-	// $.redirectPost(redirect, {data: data.replace(/\"/g, '')});
-	$.redirectPost(redirect, {data: params.replace(/\"/g, '')});
-	// $.redirectPost(redirect, params);
+	$.redirectPost(redirect, data);
+	// $.redirectPost(redirect, {batchData: params.replace(/\"/g, '')});
 }
