@@ -3,7 +3,8 @@ class ReportController < ApplicationController
 
 	def show
 		binding.pry
-		@fichas = params["batchData"].split(/(?=client_name)/)
+
+		@names = JSON.parse params["names"]
 		@client_name = params["client_name"]
 		@client_rg = params["client_rg"]
 		@client_cpf = params["client_cpf"]
