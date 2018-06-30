@@ -54,37 +54,37 @@ class Ficha < ApplicationRecord
 
 							var client_name = document.createElement('input');
 							client_name.setAttribute('type','hidden');
-							client_name.setAttribute('name','client_name');
+							client_name.setAttribute('name','client_names');
 							client_name.setAttribute('value','#{client.name}');
 
 							var client_rg = document.createElement('input');
 							client_rg.setAttribute('type','hidden');
-							client_rg.setAttribute('name','client_rg');
+							client_rg.setAttribute('name','client_rgs');
 							client_rg.setAttribute('value','#{client.rg}');
 
 							var client_cpf = document.createElement('input');
 							client_cpf.setAttribute('type','hidden');
-							client_cpf.setAttribute('name','client_cpf');
+							client_cpf.setAttribute('name','client_cpfs');
 							client_cpf.setAttribute('value','#{client.cpf}');
 
 							var client_phone = document.createElement('input');
 							client_phone.setAttribute('type','hidden');
-							client_phone.setAttribute('name','client_phone');
+							client_phone.setAttribute('name','client_phones');
 							client_phone.setAttribute('value','#{client.phone}');
 
 							var client_address = document.createElement('input');
 							client_address.setAttribute('type','hidden');
-							client_address.setAttribute('name','client_address');
+							client_address.setAttribute('name','client_addresses');
 							client_address.setAttribute('value','#{client.address}');
 
 							var client_neighborhood = document.createElement('input');
 							client_neighborhood.setAttribute('type','hidden');
-							client_neighborhood.setAttribute('name','client_neighborhood');
+							client_neighborhood.setAttribute('name','client_neighborhoods');
 							client_neighborhood.setAttribute('value','#{client.neighborhood}');
 
 							var client_city = document.createElement('input');
 							client_city.setAttribute('type','hidden');
-							client_city.setAttribute('name','client_city');
+							client_city.setAttribute('name','client_cities');
 							client_city.setAttribute('value','#{client.city}');
 
 							var orders = document.createElement('input');
