@@ -1,20 +1,21 @@
-Nome: <%= @client_name %></br>
-Rg: <%= @client_rg %></br>
-CPF: <%= @client_cpf %></br>
-Telefone: <%= @client_phone %></br>
-Endereco: <%= @client_address %></br>
-Bairro: <%= @client_neighborhood %></br>
-Cidade: <%= @client_city %></br>
-Pedidos: <%= @orders %></br>
-
+<% @client_names.each_with_index do |c, i| %>
+	<% i = i.to_s %>
+	Nome: <%= @client_names[i] %></br>
+	Rg: <%= @client_rgs[i] %></br>
+	CPF: <%= @client_cpfs[i] %></br>
+	Telefone: <%= @client_phones[i] %></br>
+	Endereco: <%= @client_addresses[i] %></br>
+	Bairro: <%= @client_neighborhoods[i] %></br>
+	Cidade: <%= @client_cities[i] %></br>
+	Pedidos: <%= @orders[i] %></br>
 </br>
-
-
-Nome: <%= @client_name %></br>
-Rg: <%= @client_rg %></br>
-CPF: <%= @client_cpf %></br>
-Telefone: <%= @client_phone %></br>
-Endereco: <%= @client_address %></br>
-Bairro: <%= @client_neighborhood %></br>
-Cidade: <%= @client_city %></br>
-Pedidos: <%= @orders %></br>
+	Nome: <%= @client_names[i] %></br>
+	Rg: <%= @client_rgs[i] %></br>
+	CPF: <%= @client_cpfs[i] %></br>
+	Telefone: <%= @client_phones[i] %></br>
+	Endereco: <%= @client_addresses[i] %></br>
+	Bairro: <%= @client_neighborhoods[i] %></br>
+	Cidade: <%= @client_cities[i] %></br>
+	Pedidos: <%= @orders[i] %></br>
+</br>
+<% end %>
