@@ -1,6 +1,5 @@
 // NEW
-- Colocar botao de imprimir tudo
-- Colocar total de estoque
+
 
 // BACKLOG
 - Limitar campos para mostrar e editar no admin
@@ -15,6 +14,9 @@
 - Criar a model order
 - Gerar ficha do cliente com as ordens (BACKEND)
 - Na tela de fichas, retornar a meta para todas as fichas exibidas
+- Colocar botao de imprimir tudo
+- Colocar total de estoque
+
 
 // BUGS
 - Na tela de fichas, quando clica em editar ou mostrar, e depois volta para pagina de listar, ele esta renderizando o botao de imprimir duplicadamente wtf

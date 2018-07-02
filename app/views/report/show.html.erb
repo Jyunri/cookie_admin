@@ -1,4 +1,5 @@
 <% @client_names.each_with_index do |c, i| %>
+<page size="A4">
 	<% i = i.to_s %>
 	Nome: <%= @client_names[i] %></br>
 	Rg: <%= @client_rgs[i] %></br>
@@ -18,4 +19,5 @@
 	Cidade: <%= @client_cities[i] %></br>
 	Pedidos: <%= @orders[i] %></br>
 </br>
+</page>
 <% end %>

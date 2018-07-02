@@ -50,6 +50,7 @@ class Ficha < ApplicationRecord
 	      			var f = document.createElement('form');
 							f.setAttribute('method','post');
 							f.setAttribute('action','#{bindings[:view].main_app.reports_path}');
+							f.classList.add('singlePrint');
 							f.target='_blank';
 
 							var client_name = document.createElement('input');

@@ -74,7 +74,7 @@ $.extend(
 });
 
 function submitForms() {
-	params = $("form[action='/print']");
+	params = $('.singlePrint');
 	client_names = {};
 	client_rgs = {};
 	client_cpfs = {};
