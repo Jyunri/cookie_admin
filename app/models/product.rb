@@ -5,9 +5,11 @@ class Product < ApplicationRecord
 	validate :stock, :check_total_ordered
 
 	def check_total_ordered
-		if(total_ordered > stock)
-			Rails.logger.error("ERROR: total_ordered greater than stock, TRACE: #{self.class.name}#check_total_ordered")
-			errors.add(:base, "Total de pedidos maior que o estoque")
+		if(total_ordered)
+			if(total_ordered > stock)
+				Rails.logger.error("ERROR: total_ordered greater than stock, TRACE: #{self.class.name}#check_total_ordered")
+				errors.add(:base, "Total de pedidos maior que o estoque")
+			end
 		end
 	end
 

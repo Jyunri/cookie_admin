@@ -59,3 +59,5 @@ gem 'rails_admin_rollincode'
 gem "devise"
 gem 'pry'
 gem 'rails-i18n'
+gem 'bootstrap'
+gem 'jquery-rails'

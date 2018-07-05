@@ -1,5 +1,6 @@
 body {
   background: rgb(204,204,204);
+  margin: 40px;
 }
 
 page {
@@ -8,9 +9,20 @@ page {
   margin: 0 auto;
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-}
-
-page[size="A4"] {
   width: 21cm;
   height: 29.7cm;
+  padding: 30px;
+}
+
+.col {
+  border: black thin solid;
+}
+
+.col-header {
+  text-align: center;
+  height: 24px;
+}
+
+.ficha {
+  margin: 10px;
 }
