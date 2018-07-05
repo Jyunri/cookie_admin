@@ -2,32 +2,32 @@
   <% i = client_index %>
   <div class="row">
     <div class="col col-2">
-      l
+      <%=image_tag("logoimperio.jpeg", size: "90x90", alt: "Logo")%>
     </div>
     <div class="col col-10">
       <div class="row">
-        <div class="col col-12">Nome: <%= @client_names[i] %></div>
+        <div class="col col-12"><b>Nome:</b> <%= @client_names[i] %></div>
       </div>
       <div class="row">
-        <div class="col col-4">RG: <%= @client_rgs[i] %></div>
-        <div class="col col-4">CPF: <%= @client_cpfs[i] %></div>
-        <div class="col col-4">Tel: <%= @client_phones[i] %></div>
+        <div class="col col-4"><b>RG:</b> <%= @client_rgs[i] %></div>
+        <div class="col col-4"><b>CPF:</b> <%= @client_cpfs[i] %></div>
+        <div class="col col-4"><b>Tel:</b> <%= @client_phones[i] %></div>
       </div>
       <div class="row">
-        <div class="col col-12">Endereço: <%= @client_addresses[i] %></div>
+        <div class="col col-12"><b>Endereço:</b> <%= @client_addresses[i] %></div>
       </div>
       <div class="row">
-        <div class="col col-6">Bairro: <%= @client_neighborhoods[i] %></div>
-        <div class="col col-6">Cidade: <%= @client_cities[i] %></div>
+        <div class="col col-6"><b>Bairro:</b> <%= @client_neighborhoods[i] %></div>
+        <div class="col col-6"><b>Cidade:</b> <%= @client_cities[i] %></div>
       </div>
       <div class="row">
-        <div class="col col-12">Central</div>
+        <div class="col col-12"><b>Central</b></div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col col-header col-1">
-      Quant
+      Qtd
     </div>
     <div class="col col-header col-5">
       Artigo
@@ -39,7 +39,7 @@
       V
     </div>
     <div class="col col-header col-2">
-      PUnit
+      P.Unit
     </div>
     <div class="col col-header col-2">
       Soma
@@ -55,4 +55,27 @@
       <div class="col col-header col-2"></div>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col col-header col--noborder col-1"></div>
+    <div class="col col-header col--noborder col-5"></div>
+    <div class="col col-header col--noborder col-1"></div>
+    <div class="col col-header col--noborder col-1"></div>
+    <div class="col col-header col--noborder col-2"><b>Total</b></div>
+    <div class="col col-header col-2"></div>
+  </div>
+  <br>
+  <div class="footer">
+    <div>
+      PERCENTUAL DE COMISSÃO: 30%</br>
+      NÃO TRABALHAMOS COM DEPÓSITOS BANCÁRIOS</br>
+      NÃO TRABALHAMOS COM CHEQUES</br>
+      EMPRESA AFILIADA AO SPC/SERASA. MANTENHA SEUS PAGAMENTOS EM DIA</br>
+    </div>
+    </br>
+    <div>
+      <b>VOLTAREI DIA:</b> ___/__/__&nbsp
+      <b>ASSINATURA:</b>  _____________
+      </br></br>
+    </div>
+  </div>
 </div>

@@ -11,7 +11,7 @@ page {
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
   width: 21cm;
   height: 29.7cm;
-  padding: 30px;
+  padding: 10px;
 }
 
 .col {
@@ -23,6 +23,14 @@ page {
   height: 24px;
 }
 
+.col--noborder {
+  border: none;
+}
+
 .ficha {
-  margin: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  border: black thin solid;
+  padding-left: 15px;
+  padding-right: 15px;
 }
