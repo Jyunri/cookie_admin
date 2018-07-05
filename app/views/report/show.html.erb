@@ -2,7 +2,7 @@
 <page>
 	<% i = i.to_s %>
 	<% 2.times do %>
-		<%= render partial: "ficha" %>
+		<%= render partial: "ficha", locals: { client_index: i } %>
 	<% end %>
 </br>
 </page>
