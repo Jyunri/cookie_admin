@@ -61,3 +61,6 @@ gem 'pry'
 gem 'rails-i18n'
 gem 'bootstrap'
 gem 'jquery-rails'
+
+
+ruby "2.5.1"
